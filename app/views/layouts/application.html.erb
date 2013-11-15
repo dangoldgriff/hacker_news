@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HackerNews</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="container">
+
+    <nav>
+      <ul class="nav pull-right">
+       <li><%= link_to "User Profile", user_path(current_user) %></li>
+      </ul>
+    </nav>
+      <% if current_user %>
+        Logged in as <%= current_user.email %>
+        <%= link_to "Log Out", session_path(current_user), :method => :delete %>
+      <% else %>
+        <%= link_to "Sign Up", new_user_path %> or
+        <%= link_to "Log In", new_session_path %>
+      <% end %>
+  <%= yield %>
+
+  <%= flash[:notice] %>
+  
+  </div>
+</body>
+</html>

@@ -1,0 +1,4 @@
+Hacker news clone by: [Corbin](http://www.github.com/corbindarras) and [Dan](http://www.github.com/dangoldgriff)
+
+
+
