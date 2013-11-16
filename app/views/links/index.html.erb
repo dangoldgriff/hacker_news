@@ -1,6 +1,6 @@
 <h1> Hella Vidz</h1>
-<%= link_to 'submit', new_link_path %> 
-
+<%= link_to 'submit', new_link_path, :class => 'btn btn-default' %> 
+<hr>
 <ol>
   <% @links.order_by_points.each do |link| %>
     <li><%= form_for :vote, :url => votes_path do |f| %>

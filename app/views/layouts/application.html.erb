@@ -8,7 +8,6 @@
 </head>
 <body>
   <div class="container">
-
     <nav>
       <ul class="nav pull-right">
        <li><%= link_to "User Profile", user_path(current_user) %></li>
@@ -22,10 +21,7 @@
         <%= link_to "Log In", new_session_path %>
       <% end %>
   <%= yield %>
-
-
   <h3><%= flash[:notice] %></h3>
-  
   </div>
 </body>
 </html>
