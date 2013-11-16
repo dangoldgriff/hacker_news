@@ -1,4 +1,4 @@
-class CommentsController < ApplicationController
+  class CommentsController < ApplicationController
 
   def new
     @comment = Comment.new(:commentable_id => params[:commentable_id],
@@ -27,3 +27,4 @@ private
     params.require(:comment).permit(:comment_text, :commentable_id, :commentable_type)
   end
 end
+
