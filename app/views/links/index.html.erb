@@ -1,0 +1,17 @@
+<h1> Hella Vidz</h1>
+<%= link_to 'submit', new_link_path, :class => 'btn btn-default' %> 
+<hr>
+<ol>
+  <% @links.order_by_points.each do |link| %>
+    <li><%= form_for :vote, :url => votes_path do |f| %>
+      <%= f.hidden_field :link_id, :value => link.id %>
+      <%= f.submit 'Vote' %> <%= link.votes.count %> 
+      <a href= <%= link.url %> target="_blank" ><%= link.short_description %></a> 
+      <%= link.created_at.to_s %> | <%= link.points %> points
+      <%= link_to 'comment', new_comment_path(:commentable_id => link.id, 
+                                              :commentable_type => Link) %>
+    </li>
+    <% end %>
+  <% end %>
+</ol>
+
